@@ -8,6 +8,10 @@ function adicionar () {
 }   
 
 function sortear () {
+    if (nomes.length <= 1) {
+        alert("Você precisa adicionar mais nomes a lista");
+        return;
+    }
     let drawOrder = [];
     document.getElementById('lista-sorteio').innerText = "";
     for (let i = 0; i < nomes.length; i++) {
@@ -23,6 +27,6 @@ function sortear () {
 
 function reiniciar () {
     nomes = [];
-    document.getElementById('lista-amigos').innerText = ""
-    document.getElementById('lista-sorteio').innerText = ""
+    document.getElementById('lista-amigos').innerText = "";
+    document.getElementById('lista-sorteio').innerText = "";
 }
