@@ -1,4 +1,4 @@
-let nomes = ["Rafa", "Zé" , "Isa"];
+let nomes = [];
 
 function adicionar () {
     let nome = document.getElementById('nome-amigo').value;
@@ -17,4 +17,10 @@ function sortear () {
         document.getElementById('lista-sorteio').innerText += (nomes[i]) + "-->" + drawOrder[i] + "\n"
     }
     drawOrder = [];
+}
+
+function reiniciar () {
+    nomes = [];
+    document.getElementById('lista-amigos').innerText = ""
+    document.getElementById('lista-sorteio').innerText = ""
 }
