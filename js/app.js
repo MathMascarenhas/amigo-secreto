@@ -2,13 +2,21 @@ let nomes = [];
 
 function adicionar () {
     let nome = document.getElementById('nome-amigo').value;
+    if (nome.length < 1) {
+        alert("Escreva um nome para adicionar");
+        return;
+    }
+    if (nomes.includes(nome)) {
+        alert("Esse nome já consta na lista :(");
+        return
+    }
     nomes.push(nome);
     document.getElementById('lista-amigos').innerText = nomes.join(', ');
     document.getElementById('nome-amigo').value = "";
 }   
 
 function sortear () {
-    if (nomes.length <= 1) {
+    if (nomes.length <= 2) {
         alert("Você precisa adicionar mais nomes a lista");
         return;
     }
@@ -37,7 +45,7 @@ function sortear () {
     for (let i = 0; i < nomes.length; i++) {
         document.getElementById("lista-sorteio").innerText +=
             nomes[i] + " --> " + drawOrder[i] + "\n";
-    }
+    } 
 }
 
 function reiniciar () {
